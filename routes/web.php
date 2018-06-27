@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    $Registros = \App\Registro::all();
-    return view('welcome',compact('Registros'));
+    $registros = \App\Registro::all();
+    return view('welcome',compact('registros'));
 });
 
 Auth::routes();
