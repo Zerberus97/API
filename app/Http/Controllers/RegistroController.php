@@ -74,6 +74,7 @@ class RegistroController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Registro::destroy($id);
+        return ['Deleteado' => true];
     }
 }

@@ -84,6 +84,7 @@ class SalaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Sala::destroy($id);
+        return ['Deleteado' => true];
     }
 }
