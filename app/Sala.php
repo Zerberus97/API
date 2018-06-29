@@ -14,6 +14,6 @@ class Sala extends Model
     ];
 
     public function  registros(){
-        return $this->hasMany(Registro::class);
+        return $this->hasMany(Registro::class,'id');
     }
 }

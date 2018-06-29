@@ -53,7 +53,7 @@
             }
 
             .links > a {
-                color: #636b6f;
+                color: #000000;
                 padding: 0 25px;
                 font-size: 12px;
                 font-weight: 600;
@@ -86,16 +86,36 @@
                         </tr>
                         </thead>
                         <tbody >
-                        <tr>
-                            <td> Luchito </td>
-                            <td> Laboratorio 5 </td>
-                            <td> 2018-06-02 19:00:00 </td>
-                        </tr>
-                        <tr>
-                            <td>Makina</td>
-                            <td>laboratorio 6</td>
-                            <td>2018-06-05 20:00:05</td>
-                        </tr>
+
+
+                        @foreach($registros as $registro)
+
+                            <tr>
+                                @foreach($profesores as $profe)
+                                @endforeach
+                                @foreach($salas as $sala)
+                                    @endforeach
+                                <td>
+                                    @if($registro->id === $profe->id)
+                                    {{$profe->name}}
+                                        @else
+                                        {{"No hay profesor"}}
+                                    @endif
+                                </td>
+                                <td>
+
+                                    @if($registro->sala_id === $sala->id)
+                                    {{$sala->NombreSala}}
+                                        @else
+                                        {{"No hay sala"}}
+                                    @endif
+                                </td>
+                                <td> {{$registro->created_at}}</td>
+                            </tr>
+
+
+                        @endforeach
+
                         </tbody>
                     </table>
 

@@ -13,7 +13,9 @@
 
 Route::get('/', function () {
     $registros = \App\Registro::all();
-    return view('welcome',compact('registros'));
+    $salas = \App\Sala::all();
+    $profesores = \App\User::all();
+    return view('welcome',compact('registros','salas','profesores'));
 });
 
 Auth::routes();

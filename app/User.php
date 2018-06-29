@@ -14,8 +14,8 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'rut','name', 'apellido','apellido2', 'password',
+    public $fillable = [
+        'id','rut','name', 'apellido','apellido2', 'password',
     ];
 
     /**
@@ -28,6 +28,6 @@ class User extends Authenticatable
     ];
 
     public function registros(){
-        return $this->hasMany(Registro::class);
+        return $this->hasMany(Registro::class,'id');
     }
 }

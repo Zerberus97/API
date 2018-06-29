@@ -11,6 +11,10 @@ class Registro extends Model
     ];
 
     public function profesores(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class,'id');
     }
+    public function salas(){
+        return $this->belongsTo(Sala::class,'id');
+    }
+
 }
