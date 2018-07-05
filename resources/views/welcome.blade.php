@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Door System</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -17,7 +17,7 @@
         <style>
             html, body {
                 background-color: #fff;
-                color: #636b6f;
+                color: #000000;
                 font-family: 'Raleway', sans-serif;
                 font-weight: 100;
                 height: 100vh;
@@ -66,6 +66,7 @@
                 margin-bottom: 30px;
             }
         </style>
+
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -88,25 +89,27 @@
                         <tbody >
 
 
+
                         @foreach($registros as $registro)
 
                             <tr>
                                 @foreach($profesores as $profe)
                                 @endforeach
                                 @foreach($salas as $sala)
-                                    @endforeach
-                                <td>
+                                @endforeach
+                                <td style="color: #000000">
+
                                     @if($registro->id === $profe->id)
-                                    {{$profe->name}}
-                                        @else
+                                        {{$profe->name}}
+                                    @else
                                         {{"No hay profesor"}}
                                     @endif
                                 </td>
-                                <td>
 
+                                <td>
                                     @if($registro->sala_id === $sala->id)
-                                    {{$sala->NombreSala}}
-                                        @else
+                                        {{$sala->NombreSala}}
+                                    @else
                                         {{"No hay sala"}}
                                     @endif
                                 </td>
@@ -136,8 +139,6 @@
 
 
         <script type="text/javascript" src="https://cdn.datatables.net/v/bs4/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-        <!--<script type="text/javascript" src="../../DataTables/datatables.min.js"></script>
-        <script type="text/javascript" src="DataTables/datatables.min.js"></script>-->
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
 
 
@@ -148,9 +149,10 @@
                 responsive: true
             });
         });
-
-
-
     </script>
+
+        <script>
+            setTimeout("location.reload()", 15000);
+        </script>
     </body>
 </html>

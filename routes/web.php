@@ -15,7 +15,21 @@ Route::get('/', function () {
     $registros = \App\Registro::all();
     $salas = \App\Sala::all();
     $profesores = \App\User::all();
-    return view('welcome',compact('registros','salas','profesores'));
+    return view('Index',compact('registros','salas','profesores'));
+});
+
+Route::get('/profesores',function (){
+
+    $profesores = \App\User::all();
+
+    return view('VistaProfesores', compact('profesores'));
+});
+
+Route::get('/graficosala', function(){
+
+    $salas = \App\Sala::all();
+
+    return view('GraficoSalas', compact('salas'));
 });
 
 Auth::routes();

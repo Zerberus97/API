@@ -18,23 +18,32 @@ class DatabaseSeeder extends Seeder
         // $this->call(UsersTableSeeder::class);
         $User1 = new User();
         $User1->rut = '19487219-4';
-        $User1->name = 'Alan';
-        $User1->apellido = 'Brito';
-        $User1->apellido2 = 'Delgado';
-        $User1->password = '54321';
+        $User1->name = 'Cristopher';
+        $User1->apellido = 'Hernandez';
+        $User1->apellido2 = 'Loyola';
+        $User1->password = '66666';
         $User1->save();
 
         $User2 = new User();
         $User2->rut = '19854217-6';
-        $User2->name = 'Alberto';
-        $User2->apellido = 'Plaza';
-        $User2->apellido2 = 'Muñoz';
+        $User2->name = 'Alan';
+        $User2->apellido = 'Beltran';
+        $User2->apellido2 = 'Garcia';
         $User2->password = '12345';
         $User2->save();
 
 
+        $User3 = new User();
+        $User3->rut = '19854217-7';
+        $User3->name = 'Sebastian';
+        $User3->apellido = 'Castillo';
+        $User3->apellido2 = 'Benitez';
+        $User3->password = '54321';
+        $User3->save();
+
+
         $Sala1 = new Sala();
-        $Sala1->NombreSala = 'Laboratorio 5';
+        $Sala1->NombreSala = 'Laboratorio 6';
         $Sala1->Estado = 0;
         $Sala1->save();
 

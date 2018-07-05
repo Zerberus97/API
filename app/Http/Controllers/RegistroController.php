@@ -15,8 +15,6 @@ class RegistroController extends Controller
     public function index()
     {
         $Registro = Registro::all()->load('profesores','salas');
-
-
         return response() ->json($Registro, 200);
     }
 

@@ -65,10 +65,10 @@ class SalaController extends Controller
     {
         $sala = Sala::find($id);
 
-        $NombreSala = $request->input('NombreSala');
+
         $Estado = $request->input('Estado');
 
-        $sala->NombreSala = $NombreSala;
+
         $sala->Estado = $Estado;
 
         $sala->save();

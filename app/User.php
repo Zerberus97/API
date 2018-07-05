@@ -28,6 +28,6 @@ class User extends Authenticatable
     ];
 
     public function registros(){
-        return $this->hasMany(Registro::class,'id');
+        return $this->hasMany(Registro::class);
     }
 }

@@ -14,7 +14,7 @@ class Registro extends Model
         return $this->belongsTo(User::class,'id');
     }
     public function salas(){
-        return $this->belongsTo(Sala::class,'id');
+        return $this->belongsTo(Sala::class);
     }
 
 }
