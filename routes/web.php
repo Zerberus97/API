@@ -27,9 +27,11 @@ Route::get('/profesores',function (){
 
 Route::get('/graficosala', function(){
 
+    $registros = \App\Registro::all();
     $salas = \App\Sala::all();
+    $profesores = \App\User::all();
 
-    return view('GraficoSalas', compact('salas'));
+    return view('GraficoSalas', compact('salas','registros', 'profesores'));
 });
 
 Auth::routes();
