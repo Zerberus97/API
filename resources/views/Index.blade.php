@@ -12,29 +12,26 @@
 </head>
 <body>
 <div class="row">
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top row">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top row" style="background-color:#Cc0000">
 
         <div class="container">
+           <!-- <img src="/LogoCompletoBlanco.png" width="160" height="80" class="d-inline-block align-top" alt=""  href="{{ url('/') }}">-->
             <a class="navbar-brand" href="{{ url('/') }}">DoorSystem</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" style="background-color:#ffffff">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault" >
                 <ul class="navbar-nav mr-auto">
-
                     <li class="nav-item active">
                         <a class="nav-link active" href="{{ url('/') }}">Inicio <span class="sr-only">(current)</span></a>
                     </li>
-
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Profesores <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ route('login') }}">Profesores <span class="sr-only">(current)</span></a>
                     </li>
-
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ url('/graficosala') }}">Salas <span class="sr-only">(current)</span></a>
                     </li>
-
                 </ul>
             </div>
         </div>
@@ -60,6 +57,7 @@
                     <div class="card-body">
                         <h4 class="card-title">Laboratorio 5</h4>
                         <p class="card-text">
+
                         <table class="table" id="Tabla">
                             <thead class="thead-dark">
                             <tr>
@@ -70,16 +68,16 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <!-- cuerpo de la tabla -->
                             <?php $x = 1 ?>
                             @foreach($registros as $registro)
                                 @if($registro->sala_id === 1 )
-
                             <tr id="{{$registro->id}}">
                                 <th scope="row">{{$x++}}</th>
                                 <td>
                                     <?php
                                         foreach ($profesores as $profe)
-                                            if ($registro->user_id === $profe->id){
+                                            if ($registro->user_id === $profe->id && $profe->id !== 1){
                                                 $ElprofeN = $profe->name;
                                                 $ElprofeA1 = $profe->apellido;
                                                 $ElprofeA2 = $profe->apellido2;
@@ -89,9 +87,7 @@
 
                                 </td>
                                 <td>{{$registro->created_at}}</td>
-
                             </tr>
-
                                 @endif
                             @endforeach
                             </tbody>
@@ -174,9 +170,6 @@
         <div class="row">
             <p> </p>
         </div>
-
-
-
     </div> <!-- /container -->
 
 </main>

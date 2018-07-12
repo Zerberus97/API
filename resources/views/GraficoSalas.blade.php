@@ -29,7 +29,7 @@
                     </li>
 
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Profesores <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{{ url('/profesores') }}">Profesores <span class="sr-only">(current)</span></a>
                     </li>
 
                     <li class="nav-item active">
@@ -62,14 +62,16 @@
                         <p class="card-text">
                             <div id="myChart"></div>
                         </p>
-
                     </div>
 
                 </div> <!--Cierre de el card LAB 5-->
             </div>
+
             <div class="col-md-1"></div>
         </div>
+
         <br>
+
         <div class="row">
             <div class="col-md-1"> </div>
             <div class="col-md-10">
@@ -86,6 +88,8 @@
             </div>
             <div class="col-md-1"></div>
         </div>
+
+        <br>
     </div>
 
 </main>
@@ -108,25 +112,28 @@
     function grafico(){
         var data = new google.visualization.DataTable();
         data.addColumn('string','Profesor');
-        data.addColumn('number','Uso');
+        data.addColumn('number','Uso de sala');
         data.addRows([
 
 
             @foreach($profesores as $profe)
-            ['{{$profe->name}} {{$profe->apellido}}',
+                <?php
 
+                ?>
+            [@if($profe->id !== 1)
+
+                '{{$profe->name}} {{$profe->apellido}}'
+                @endif
+                ,
                 <?php
                 $mysqli = new mysqli('localhost','root','','prueba');
                 $sql = $mysqli->query("SELECT count(sala_id) FROM registros WHERE sala_id= 1 && user_id = $profe->id");
                 $datos = mysqli_fetch_array($sql);
                 ?>
-
                 {{$datos['count(sala_id)']}}],
             @endforeach
-
             ]
         );
-
         var opciones = {'title':'Uso de sala',
                         'width':800,
                         'height':400};
@@ -141,8 +148,10 @@
 
 
                         @foreach($profesores as $profe)
-                ['{{$profe->name}} {{$profe->apellido}}',
-
+                [@if($profe->id !== 1)
+                '{{$profe->name}} {{$profe->apellido}}'
+                @endif
+                ,
                     <?php
                     $mysqli = new mysqli('localhost','root','','prueba');
                     $sql = $mysqli->query("SELECT count(sala_id) FROM registros WHERE sala_id= 2 && user_id = $profe->id");
@@ -168,7 +177,5 @@
     setTimeout("location.reload()", 30000);
 </script>
 
-
 </body>
 </html>
-

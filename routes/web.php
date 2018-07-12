@@ -18,11 +18,11 @@ Route::get('/', function () {
     return view('Index',compact('registros','salas','profesores'));
 });
 
-Route::get('/profesores',function (){
+Route::get('/home',function (){
 
     $profesores = \App\User::all();
 
-    return view('VistaProfesores', compact('profesores'));
+    return view('home',compact(['$profesores => $Profesores']));
 });
 
 Route::get('/graficosala', function(){
