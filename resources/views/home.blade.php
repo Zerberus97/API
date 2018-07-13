@@ -4,11 +4,11 @@
 <div class="container">
 
     <div class="row">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top row" style="background-color:#Cc0000">
+        <nav class="navbar navbar-expand-md fixed-top row" style="background-color:#Cc0000">
 
             <div class="container">
             <!-- <img src="/LogoCompletoBlanco.png" width="160" height="80" class="d-inline-block align-top" alt=""  href="{{ url('/') }}">-->
-                <a class="navbar-brand" href="{{ url('/') }}">DoorSystem</a>
+                <a class="navbar-brand" style="color: #ffffff" href="{{ url('/') }}">DoorSystem</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation" style="background-color:#ffffff">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -16,13 +16,13 @@
                 <div class="collapse navbar-collapse" id="navbarsExampleDefault" >
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link active" href="{{ url('/') }}">Inicio <span class="sr-only">(current)</span></a>
+                            <a class="nav-link active" style="color: #ffffff" href="{{ url('/') }}">Inicio <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ route('login') }}">Profesores <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" style="color: #ffffff" href="{{ route('login') }}">Profesores <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item active">
-                            <a class="nav-link" href="{{ url('/graficosala') }}">Salas <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" style="color: #ffffff" href="{{ url('/graficosala') }}">Salas <span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                 </div>
@@ -68,11 +68,11 @@
                                         <p class="card-text">
 
                                         <table class="table" id="Tabla">
-                                            <thead class="thead-dark">
+                                            <thead class="" style="background-color: #cc0001">
                                             <tr>
-                                                <th scope="col">#</th>
-                                                <th scope="col">Docente</th>
-                                                <th scope="col">Fecha de ingreso</th>
+                                                <th scope="col" style="color: #ffffff">#</th>
+                                                <th scope="col" style="color: #ffffff">Docente</th>
+                                                <th scope="col" style="color: #ffffff">Fecha de ingreso</th>
                                                 <!--<th scope="col">Hora</th>-->
                                             </tr>
                                             </thead>
@@ -108,7 +108,7 @@
                             </div>
                             <div class="col-md-1"></div>
                         </div>
-                        <a href="" class="btn btn-primary" data-toggle="modal" data-target="#nuevoP">Agregar Profesor</a>
+                        <a href="" class="btn" style="background-color: #cc0001; color: #ffffff"  data-toggle="modal" data-target="#nuevoP">Agregar Profesor</a>
                         <!--<a href="" class="btn btn-primary" data-toggle="modal" data-target="#eliminarP">Eliminar Profesor</a>-->
                 </div>
             </div>
