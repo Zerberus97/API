@@ -26,8 +26,17 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        User::create($request->all());
-        return ['creado' => true];
+        User::create([
+
+            'rut' => $request->rutP,
+            'name' => $request->nombreP,
+            'apellido' => $request->apellidoP,
+            'apellido2' => $request->apellido2P,
+            'email' => $request->emailP,
+            'password' => $request->passP,
+
+        ]);
+        return view('home');
     }
 
     /**
@@ -71,9 +80,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $id)
     {
         User::destroy($id);
-        return ['Deleteado' => true];
+        return view('home');
     }
 }

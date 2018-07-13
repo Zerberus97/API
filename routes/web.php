@@ -38,4 +38,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 Route::resource('/sala','SalaController');
+
+Route::post('/User','UserController@store')->name('User');
+Route::delete('/UserD','UserController@destroy')->name('UserD');
+
+
